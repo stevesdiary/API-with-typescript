@@ -16,7 +16,6 @@ export const login = async (req: express.Request, res: express.Response) => {
       //Authentication of the user without knowing their password
       const encrypted =authentication(user.authentication.salt, password)
       const expectedHash = encrypted;
-      
       if (encrypted != expectedHash ) {
          return res.status(403).json('Incorrect password!')
       }
