@@ -30,9 +30,18 @@
 // app.use('/', router());
 
 
-let employee: {
-    id: number;
-    readonly name?: string;
-} = { id: 1, name: 'Sam'};
-employee.name = 'George'
+//Working with Type aliases, unions and interactions, type narrowing, nullable, the Unknown types, the never types.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
+type Employee = {
+    readonly id: number,
+    name: string,
+    retire: (date: Date) => void
+}
+let employee: Employee = {
+    id: 1,
+    name: 'Sam',
+    retire: (date: Date) => {
+       console.log(date) 
+    }
+}
 // console.log(employee.name)

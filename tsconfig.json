@@ -8,7 +8,7 @@
         "outDir": "dist",
         "types": ["express"],
         "noImplicitAny": true,
-        "noUnusedParameters": true,
+        // "noUnusedParameters": true,
         "noUnusedLocals": true,
         "noEmitOnError": true
     },
