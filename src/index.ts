@@ -30,9 +30,9 @@
 // app.use('/', router());
 
 
-function calculateTax(income: number, taxYear: number) : number {
-    if(taxYear < 2022)
-        return income * 1.2;
-    return income * 1.3
-}
-calculateTax(3000, 2021);
+let employee: {
+    id: number;
+    readonly name?: string;
+} = { id: 1, name: 'Sam'};
+employee.name = 'George'
+// console.log(employee.name)
