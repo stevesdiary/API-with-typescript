@@ -1,11 +1,20 @@
 
-//Working with Type aliases, unions and interactions, type narrowing, nullable, the Unknown types, the never types.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+//Working with "interactions", type narrowing, nullable, the Unknown types, the never types.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+//Havin 2 functions and combining them to one with intersection.
 
-function kgToLbs (weight: number | string): number {
-    if (typeof weight === 'number') {
-      return weight * 2.2;
-    }
-    else {return parseInt(weight) * 2.2 };
+type Draggable = {
+  drag: () => void
+};
+
+type Resizable = {
+  resize: () => void
+};
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+  drag: () => {},
+  resize: () => {}
 }
-console.log(kgToLbs(10));
-console.log(kgToLbs('2kg'));
+
+//texBox has the intersection of the properties of draggable and resixable
