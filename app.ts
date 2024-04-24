@@ -1,8 +1,12 @@
 
 //Working with "nullable", the Unknown types, the never types.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
-function greet(name: string) {
-  console.log(name.toUpperCase());
+function greet(name: string | null) {
+  if (name)
+    console.log(name.toUpperCase());
+  else
+    console.log('Holla')
 }
 
 greet(null) //Argument of type 'null' is not assignable to parameter of type 'string'
+//a union type can also be used to figure out the null error
