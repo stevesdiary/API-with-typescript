@@ -2,10 +2,15 @@
     "compilerOptions": {
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
+        "strict": true,
+        "sourceMap": true,
         "baseUrl": "src",
         "outDir": "dist",
         "types": ["express"],
         "noImplicitAny": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "noEmitOnError": true
     },
     "include": ["src/**/*"],
 }
