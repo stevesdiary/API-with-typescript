@@ -1,12 +1,23 @@
 
-//Working with "nullable", the Unknown types, the never types.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+//Working with "optional chaining"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 
-function greet(name: string | null) {
-  if (name)
-    console.log(name.toUpperCase());
-  else
-    console.log('Holla')
+type Customer = {
+  birthday: Date
+};
+
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0 ? null : { birthday: new Date() };
 }
 
-greet(null) //Argument of type 'null' is not assignable to parameter of type 'string'
-//a union type can also be used to figure out the null error
+let customer = getCustomer(1);
+//Optional property access operator
+console.log(customer?.birthday.getFullYear());
+
+//optional element access operator
+//customer?.[0]
+
+//optional call
+let  log: any = null;
+log?.('a');
+
+console.log(log);
